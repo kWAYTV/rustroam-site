@@ -5,10 +5,10 @@ import { motion } from 'motion/react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const stats = [
-  { value: '99.9%', label: 'Uptime' },
-  { value: '∞', label: 'Active Admins' },
-  { value: '1', label: 'Global Servers' },
-  { value: '24/7', label: 'Support' }
+  { value: '24/7', label: 'Server Availability' },
+  { value: '0%', label: 'Pay to Win' },
+  { value: '5+', label: 'Active Admins' },
+  { value: 'Discord', label: 'Live Support' }
 ];
 
 export function Stats() {

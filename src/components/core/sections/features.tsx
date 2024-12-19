@@ -9,21 +9,21 @@ import { Separator } from '@/components/ui/separator';
 const features = [
   {
     icon: Zap,
-    title: 'High Performance',
+    title: 'Fair Play',
     description:
-      'Experience smooth gameplay with our optimized servers and minimal latency.'
+      'No pay-to-win mechanics - only cosmetic items available for purchase. Everyone starts on equal footing.'
   },
   {
     icon: Users,
-    title: 'Active Community',
+    title: 'Active Administration',
     description:
-      'Join thousands of active players and make new friends along the way.'
+      'Dedicated non-playing admin team focused solely on server management and community support.'
   },
   {
     icon: Shield,
-    title: 'Anti-Cheat Protection',
+    title: 'Zero Tolerance',
     description:
-      'Play with confidence knowing our servers are protected against cheaters.'
+      'Strict anti-cheat measures and active monitoring to maintain a fair gaming environment.'
   }
 ];
 
