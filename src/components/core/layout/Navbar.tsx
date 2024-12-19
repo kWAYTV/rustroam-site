@@ -1,7 +1,8 @@
 import { ServerIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+
 import { MobileMenu } from '@/components/core/layout/MobileMenu';
+import { Button } from '@/components/ui/button';
 
 const navItems = [
   { label: 'Home', href: '/' },

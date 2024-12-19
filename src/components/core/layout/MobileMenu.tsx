@@ -1,9 +1,10 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+
+import { Button } from '@/components/ui/button';
 
 interface MobileMenuProps {
   items: Array<{ label: string; href: string }>;

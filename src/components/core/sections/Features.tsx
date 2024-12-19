@@ -1,4 +1,4 @@
-import { Zap, Users, Shield } from 'lucide-react';
+import { Shield, Users, Zap } from 'lucide-react';
 
 const features = [
   {
