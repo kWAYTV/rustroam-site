@@ -27,7 +27,7 @@ export function Hero() {
           <div className='space-y-4 md:space-y-6'>
             <Badge
               variant='secondary'
-              className='mb-4 border-none bg-orange-500/10 text-orange-600 dark:bg-orange-500/10 dark:text-orange-500'
+              className='bg-orange-700/10 text-orange-600'
             >
               Now in Beta
             </Badge>
