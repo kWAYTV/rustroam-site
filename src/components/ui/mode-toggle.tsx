@@ -18,9 +18,8 @@ export function ModeToggle() {
 
   if (!mounted) {
     return (
-      <Button variant='linkHover2' className='flex items-center gap-2 p-2'>
+      <Button variant='ghost' size='icon' className='flex items-center gap-2'>
         <Loader2 className='h-4 w-4 animate-spin' aria-hidden='true' />
-        <span className='capitalize'>Loading</span>
       </Button>
     );
   }
@@ -28,8 +27,9 @@ export function ModeToggle() {
   return (
     <Button
       onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}
-      variant='linkHover2'
-      className='flex items-center gap-2 p-2'
+      variant='ghost'
+      size='icon'
+      className='relative'
       aria-label='Toggle theme'
     >
       <AnimatePresence mode='wait' initial={false}>
@@ -39,16 +39,12 @@ export function ModeToggle() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 10, opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className='flex items-center gap-2'
         >
           {currentTheme === 'dark' ? (
-            <Sun className='h-4 w-4' aria-hidden='true' />
+            <Sun className='h-5 w-5' aria-hidden='true' />
           ) : (
-            <Moon className='h-4 w-4' aria-hidden='true' />
+            <Moon className='h-5 w-5' aria-hidden='true' />
           )}
-          <span className='capitalize'>
-            {currentTheme === 'dark' ? 'Light' : 'Dark'}
-          </span>
         </motion.div>
       </AnimatePresence>
     </Button>

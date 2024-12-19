@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/ui/mode-toggle';
 
 interface MobileMenuProps {
   items: Array<{ label: string; href: string }>;
@@ -36,6 +37,9 @@ export function MobileMenu({ items }: MobileMenuProps) {
                   {item.label}
                 </Link>
               ))}
+              <div className='flex items-center justify-start'>
+                <ModeToggle />
+              </div>
               <Button size='sm' className='bg-orange-500 hover:bg-orange-600'>
                 Connect
               </Button>
