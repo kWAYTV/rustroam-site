@@ -8,7 +8,7 @@ import { ModeToggle } from '@/components/ui/mode-toggle';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Rules', href: '/rules' },
-  { label: 'Store', href: '/store' },
+  { label: 'Servers', href: '/servers' },
   { label: 'Leaderboard', href: '/leaderboard' }
 ];
 
