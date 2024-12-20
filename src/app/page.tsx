@@ -1,24 +1,37 @@
+import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
-import {
-  Features,
-  FeaturesSkeleton
-} from '@/components/core/sections/features';
 import { Hero, HeroSkeleton } from '@/components/core/sections/hero';
-import { Stats, StatsSkeleton } from '@/components/core/sections/stats';
+import { StatsSkeleton } from '@/components/core/sections/stats';
+
+// Dynamically import heavy components
+const Features = dynamic(
+  () => import('@/components/core/sections/features').then(mod => mod.Features),
+  {
+    loading: () => <FeaturesSkeleton />
+  }
+);
+
+const Stats = dynamic(
+  () => import('@/components/core/sections/stats').then(mod => mod.Stats),
+  {
+    loading: () => <StatsSkeleton />
+  }
+);
+
+// Import skeletons statically
+const { FeaturesSkeleton } = await import(
+  '@/components/core/sections/features'
+);
 
 export default function Home() {
   return (
-    <>
+    <div className='space-y-12 sm:space-y-16 lg:space-y-20'>
       <Suspense fallback={<HeroSkeleton />}>
         <Hero />
       </Suspense>
-      <Suspense fallback={<FeaturesSkeleton />}>
-        <Features />
-      </Suspense>
-      <Suspense fallback={<StatsSkeleton />}>
-        <Stats />
-      </Suspense>
-    </>
+      <Features />
+      <Stats />
+    </div>
   );
 }
