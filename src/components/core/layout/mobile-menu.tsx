@@ -35,29 +35,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
         onClick={() => setIsOpen(!isOpen)}
         className='relative h-9 w-9 rounded-lg p-0 hover:bg-orange-500/10'
       >
-        <AnimatePresence mode='wait'>
-          {isOpen ? (
-            <motion.div
-              key='close'
-              initial={{ opacity: 0, rotate: -90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 90 }}
-              transition={{ duration: 0.2 }}
-            >
-              <X className='h-5 w-5 text-orange-500' />
-            </motion.div>
-          ) : (
-            <motion.div
-              key='menu'
-              initial={{ opacity: 0, rotate: 90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: -90 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Menu className='h-5 w-5 text-orange-500' />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <Menu className='h-5 w-5 text-orange-500' />
       </Button>
 
       {/* Mobile Menu Overlay */}
@@ -90,9 +68,16 @@ export function MobileMenu({ items }: MobileMenuProps) {
                     variant='ghost'
                     size='icon'
                     onClick={() => setIsOpen(false)}
-                    className='rounded-lg hover:bg-orange-500/10'
+                    className='relative h-9 w-9 rounded-lg p-0 hover:bg-orange-500/10'
                   >
-                    <X className='h-5 w-5 text-orange-500' />
+                    <motion.div
+                      initial={{ opacity: 0, rotate: -90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: 90 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <X className='h-5 w-5 text-orange-500' />
+                    </motion.div>
                   </Button>
                 </div>
 
