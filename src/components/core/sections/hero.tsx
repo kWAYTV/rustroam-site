@@ -7,6 +7,7 @@ import { CardBackground } from '@/components/core/layout/card-background';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -77,8 +78,7 @@ export function Hero() {
                 size='lg'
                 className='group relative w-full overflow-hidden bg-gradient-to-r from-orange-500 to-red-500 text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_theme(colors.orange.500)] sm:w-auto'
               >
-                <span className='relative z-10'>Connect Now</span>
-                <div className='absolute inset-0 -z-0 translate-y-[100%] bg-gradient-to-r from-orange-600 to-red-600 transition-transform duration-300 group-hover:translate-y-0' />
+                <Link href='/servers'>Connect Now</Link>
               </Button>
 
               <Button
@@ -86,7 +86,7 @@ export function Hero() {
                 variant='outline'
                 className='w-full border-orange-500/20 bg-orange-500/5 text-orange-500 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-orange-500/10 hover:text-orange-400 hover:shadow-[0_0_2rem_-0.5rem_theme(colors.orange.500)] sm:w-auto'
               >
-                View Rules
+                <Link href='/rules'>View Rules</Link>
               </Button>
             </motion.div>
           </div>

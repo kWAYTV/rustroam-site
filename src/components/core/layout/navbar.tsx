@@ -8,8 +8,7 @@ import { ModeToggle } from '@/components/ui/mode-toggle';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Rules', href: '/rules' },
-  { label: 'Servers', href: '/servers' },
-  { label: 'Leaderboard', href: '/leaderboard' }
+  { label: 'Servers', href: '/servers' }
 ];
 
 export function Navbar() {
@@ -40,10 +39,11 @@ export function Navbar() {
             ))}
             <ModeToggle />
             <Button
+              variant='ringHover'
               size='sm'
               className='bg-gradient-to-r from-orange-600 to-red-600 text-white hover:from-orange-600/90 hover:to-red-600/90 dark:from-orange-500 dark:to-red-500'
             >
-              Connect
+              <Link href='/servers'>Connect</Link>
             </Button>
           </div>
 

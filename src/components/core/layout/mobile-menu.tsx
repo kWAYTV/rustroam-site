@@ -99,7 +99,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
                     <div className='flex items-center justify-start px-4'>
                       <ModeToggle />
                     </div>
-                    <Link href='/connect' onClick={() => setIsOpen(false)}>
+                    <Link href='/servers' onClick={() => setIsOpen(false)}>
                       <Button
                         size='lg'
                         className='group relative w-full overflow-hidden bg-gradient-to-r from-orange-500 to-red-500 text-white transition-all duration-300 hover:shadow-[0_0_2rem_-0.5rem_theme(colors.orange.500)]'
