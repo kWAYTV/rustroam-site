@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import { CardBackground } from '@/components/core/layout/card-background';
 import { Button } from '@/components/ui/button';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 
@@ -18,8 +17,18 @@ export function MobileMenu({ items }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  // Prevent scroll when menu is open
+  if (typeof window !== 'undefined') {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }
+
   return (
-    <div className='md:hidden'>
+    <div className='relative md:hidden'>
+      {/* Toggle Button */}
       <Button
         variant='ghost'
         size='icon'
@@ -51,6 +60,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
         </AnimatePresence>
       </Button>
 
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -58,57 +68,57 @@ export function MobileMenu({ items }: MobileMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className='absolute left-0 right-0 top-16 border-t border-border/40'
+            className='fixed inset-x-0 top-0 z-50 mt-16 border-t border-border/40'
           >
-            <div className='relative bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60'>
-              <CardBackground />
-              <div className='container mx-auto px-4 py-6'>
-                <div className='flex flex-col space-y-6'>
-                  <div className='flex flex-col space-y-2'>
-                    {items.map((item, index) => (
-                      <motion.div
-                        key={item.href}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: index * 0.05
-                        }}
-                      >
-                        <Link
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className={`block w-full rounded-lg px-4 py-2 text-base font-medium transition-colors ${
-                            pathname === item.href
-                              ? 'bg-orange-500/10 text-foreground'
-                              : 'text-muted-foreground hover:bg-orange-500/10 hover:text-foreground'
-                          }`}
-                        >
-                          {item.label}
-                        </Link>
-                      </motion.div>
-                    ))}
+            <div className='relative min-h-[calc(100vh-4rem)] bg-background/95 backdrop-blur-xl'>
+              {/* Menu Header */}
+              <div className='flex items-center justify-between border-b border-border/40 px-6 py-4'>
+                <span className='text-lg font-semibold'>Menu</span>
+                <Button
+                  variant='ghost'
+                  size='icon'
+                  onClick={() => setIsOpen(false)}
+                  className='rounded-lg hover:bg-orange-500/10'
+                >
+                  <X className='h-5 w-5 text-orange-500' />
+                </Button>
+              </div>
+
+              {/* Menu Items */}
+              <div className='flex flex-col gap-2 p-6'>
+                {items.map(item => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`rounded-lg px-4 py-3 text-base font-medium transition-colors ${
+                      pathname === item.href
+                        ? 'bg-orange-500/10 text-foreground'
+                        : 'text-muted-foreground hover:bg-orange-500/10 hover:text-foreground'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Menu Footer */}
+              <div className='absolute bottom-0 left-0 right-0 border-t border-border/40 p-6'>
+                <div className='flex flex-col gap-6'>
+                  <div className='flex items-center justify-between'>
+                    <span className='text-sm text-muted-foreground'>
+                      Switch theme
+                    </span>
+                    <ModeToggle />
                   </div>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2, delay: items.length * 0.05 }}
-                    className='flex flex-col space-y-4'
+                  <Link
+                    href='/servers'
+                    onClick={() => setIsOpen(false)}
+                    className='flex h-12 items-center justify-center rounded-lg bg-gradient-to-r from-orange-500 to-red-500 font-medium text-white transition-all duration-300 hover:from-orange-600 hover:to-red-600'
                   >
-                    <div className='flex items-center justify-start px-4'>
-                      <ModeToggle />
-                    </div>
-                    <Link href='/servers' onClick={() => setIsOpen(false)}>
-                      <Button
-                        size='lg'
-                        className='group relative w-full overflow-hidden bg-gradient-to-r from-orange-500 to-red-500 text-white transition-all duration-300 hover:shadow-[0_0_2rem_-0.5rem_theme(colors.orange.500)]'
-                      >
-                        <span className='relative z-10'>Connect</span>
-                        <div className='absolute inset-0 -z-0 translate-y-[100%] bg-gradient-to-r from-orange-600 to-red-600 transition-transform duration-300 group-hover:translate-y-0' />
-                      </Button>
-                    </Link>
-                  </motion.div>
+                    Connect to Server
+                  </Link>
                 </div>
               </div>
             </div>
