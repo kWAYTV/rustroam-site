@@ -1,9 +1,9 @@
 'use client';
 
 import { AlertCircle } from 'lucide-react';
+import { motion } from 'motion/react';
 import { Link } from 'next-view-transitions';
 import type { ReactNode } from 'react';
-import { motion } from 'motion/react';
 
 import { CardBackground } from '@/components/core/layout/card-background';
 import { Button } from '@/components/ui/button';
