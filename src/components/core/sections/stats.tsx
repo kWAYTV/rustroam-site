@@ -22,12 +22,14 @@ export function Stats() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className='group h-full border-none bg-gradient-to-b from-background/80 to-background shadow-none backdrop-blur transition-colors hover:from-background/40 hover:to-background/40 supports-[backdrop-filter]:from-background/60 supports-[backdrop-filter]:to-background/60'>
-              <CardContent className='flex flex-col items-center justify-center space-y-2 p-6 text-center'>
-                <span className='bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-3xl font-bold text-transparent dark:from-orange-500 dark:to-red-500 md:text-4xl'>
+            <Card className='group relative h-full overflow-hidden border-none bg-gradient-to-b from-background/80 to-background shadow-none backdrop-blur transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_theme(colors.orange.500)] supports-[backdrop-filter]:from-background/60 supports-[backdrop-filter]:to-background/60'>
+              <div className='absolute inset-0 bg-gradient-to-r from-orange-500/0 via-red-500/0 to-orange-500/0 transition-all duration-300 group-hover:from-orange-500/5 group-hover:via-red-500/5 group-hover:to-orange-500/5' />
+              <div className='bg-grid-small pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
+              <CardContent className='relative flex flex-col items-center justify-center space-y-2 p-6 text-center'>
+                <span className='bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-3xl font-bold text-transparent transition-colors group-hover:from-orange-500 group-hover:to-red-500 dark:from-orange-500 dark:to-red-500 md:text-4xl'>
                   {stat.value}
                 </span>
-                <span className='text-sm text-muted-foreground'>
+                <span className='text-sm text-muted-foreground transition-colors group-hover:text-foreground'>
                   {stat.label}
                 </span>
               </CardContent>
