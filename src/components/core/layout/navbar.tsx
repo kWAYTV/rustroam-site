@@ -5,12 +5,10 @@ import Link from 'next/link';
 
 import { MobileMenu } from '@/components/core/layout/mobile-menu';
 import { Button } from '@/components/ui/button';
-import { ModeToggle } from '@/components/ui/mode-toggle';
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'Rules', href: '/rules' },
-  { label: 'Servers', href: '/servers' }
+  { label: 'Rules', href: '/rules' }
 ];
 
 export function Navbar() {
@@ -21,9 +19,9 @@ export function Navbar() {
           {/* Logo */}
           <Link href='/' className='group flex items-center space-x-2'>
             <div className='rounded-lg bg-gradient-to-br from-orange-500/20 to-red-500/20 p-1.5 backdrop-blur-sm transition-colors duration-300 group-hover:from-orange-500/30 group-hover:to-red-500/30'>
-              <ServerIcon className='h-5 w-5 text-orange-600 transition-colors duration-300 group-hover:text-orange-500 dark:text-orange-500 dark:group-hover:text-orange-400' />
+              <ServerIcon className='h-5 w-5 text-orange-500' />
             </div>
-            <span className='bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text font-bold text-transparent transition-colors duration-300 group-hover:from-orange-500 group-hover:to-red-500 dark:from-orange-500 dark:to-red-500 dark:group-hover:from-orange-400 dark:group-hover:to-red-400'>
+            <span className='bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text font-bold text-transparent'>
               RustRoam
             </span>
           </Link>
@@ -39,14 +37,13 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <ModeToggle />
             <Button
               asChild
               variant='ringHover'
               size='sm'
-              className='bg-gradient-to-r from-orange-600 to-red-600 text-white hover:from-orange-600/90 hover:to-red-600/90 dark:from-orange-500 dark:to-red-500'
+              className='bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600'
             >
-              <Link href='/servers'>Connect</Link>
+              <Link href='/servers'>Our Servers</Link>
             </Button>
           </div>
 

@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import { ModeToggle } from '@/components/ui/mode-toggle';
 
 interface MobileMenuProps {
   items: Array<{ label: string; href: string }>;
@@ -101,22 +100,13 @@ export function MobileMenu({ items }: MobileMenuProps) {
 
                 {/* Menu Footer */}
                 <div className='absolute bottom-0 left-0 right-0 border-t border-border/40 p-6'>
-                  <div className='flex flex-col gap-6'>
-                    <div className='flex items-center justify-between'>
-                      <span className='text-sm text-muted-foreground'>
-                        Switch theme
-                      </span>
-                      <ModeToggle />
-                    </div>
-
-                    <Link
-                      href='/servers'
-                      onClick={() => setIsOpen(false)}
-                      className='flex h-12 items-center justify-center rounded-lg bg-gradient-to-r from-orange-500 to-red-500 font-medium text-white transition-all duration-300 hover:from-orange-600 hover:to-red-600'
-                    >
-                      Connect to Server
-                    </Link>
-                  </div>
+                  <Link
+                    href='/servers'
+                    onClick={() => setIsOpen(false)}
+                    className='flex h-12 items-center justify-center rounded-lg bg-gradient-to-r from-orange-500 to-red-500 font-medium text-white transition-all duration-300 hover:from-orange-600 hover:to-red-600'
+                  >
+                    Our Servers
+                  </Link>
                 </div>
               </div>
             </motion.div>

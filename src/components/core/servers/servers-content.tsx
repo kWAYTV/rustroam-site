@@ -58,10 +58,10 @@ export function ServersContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
             >
-              <Card className='group relative overflow-hidden border-none bg-background/40 p-2.5 shadow-none backdrop-blur-xl transition-all duration-300 hover:bg-background/60 supports-[backdrop-filter]:bg-background/40'>
+              <Card className='group relative overflow-hidden border border-zinc-300 bg-background/95 p-2.5 shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-zinc-400 hover:bg-background/90 dark:border-border/40 dark:bg-background/40 dark:hover:border-border/60 dark:hover:bg-background/60'>
                 <CardBackground />
                 <div className='relative'>
-                  <div className='relative flex w-full justify-center overflow-hidden rounded-lg bg-background/40 backdrop-blur-sm'>
+                  <div className='relative flex w-full justify-center overflow-hidden rounded-lg bg-zinc-900/90 backdrop-blur-sm'>
                     <div className='w-full max-w-[500px] overflow-hidden'>
                       <iframe
                         src={server.iframeUrl}
