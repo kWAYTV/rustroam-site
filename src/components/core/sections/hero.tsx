@@ -12,7 +12,7 @@ export function Hero() {
     <section className='container mx-auto px-4 py-24 md:py-32'>
       <Card className='relative overflow-hidden border-none bg-background/60 p-6 shadow-none backdrop-blur supports-[backdrop-filter]:bg-background/60 md:p-12 lg:p-16'>
         <div className='absolute inset-0 bg-gradient-to-r from-orange-500/5 via-red-500/5 to-orange-500/5' />
-        <div className='pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]' />
+        <div className='pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]' />
         <div className='pointer-events-none absolute inset-0 bg-background/40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,transparent_0%,#000000_100%)]' />
         <div className='relative flex flex-col items-center space-y-8 text-center md:space-y-12'>
           <motion.div
