@@ -76,6 +76,7 @@ export function Hero() {
             >
               <Button
                 size='lg'
+                asChild
                 className='group relative w-full overflow-hidden bg-gradient-to-r from-orange-500 to-red-500 text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_theme(colors.orange.500)] sm:w-auto'
               >
                 <Link href='/servers'>Connect Now</Link>
@@ -84,6 +85,7 @@ export function Hero() {
               <Button
                 size='lg'
                 variant='outline'
+                asChild
                 className='w-full border-orange-500/20 bg-orange-500/5 text-orange-500 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-orange-500/10 hover:text-orange-400 hover:shadow-[0_0_2rem_-0.5rem_theme(colors.orange.500)] sm:w-auto'
               >
                 <Link href='/rules'>View Rules</Link>
