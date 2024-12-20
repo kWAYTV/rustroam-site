@@ -1,6 +1,10 @@
 import { type Metadata } from 'next';
+import { Suspense } from 'react';
 
-import { RulesContent } from '@/components/core/rules/rules-content';
+import {
+  RulesContent,
+  RulesSkeleton
+} from '@/components/core/rules/rules-content';
 
 export const metadata: Metadata = {
   title: 'Server Rules | RustRoam',
@@ -8,5 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default function RulesPage() {
-  return <RulesContent />;
+  return (
+    <Suspense fallback={<RulesSkeleton />}>
+      <RulesContent />
+    </Suspense>
+  );
 }

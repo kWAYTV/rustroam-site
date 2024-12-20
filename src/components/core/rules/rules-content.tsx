@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
 const rules = [
@@ -77,17 +77,8 @@ export function RulesContent() {
         >
           <Card className='relative overflow-hidden border-none bg-background/40 shadow-none backdrop-blur-xl supports-[backdrop-filter]:bg-background/40'>
             <CardBackground />
-            <CardHeader className='relative pb-4'>
-              <CardTitle className='bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-xl text-transparent sm:text-2xl'>
-                Essential Guidelines
-              </CardTitle>
-            </CardHeader>
-            <CardContent className='relative'>
-              <Accordion
-                type='single'
-                collapsible
-                className='w-full space-y-2 sm:space-y-4'
-              >
+            <div className='relative p-6 sm:p-8'>
+              <Accordion type='single' collapsible className='w-full space-y-4'>
                 {rules.map((item, index) => (
                   <motion.div
                     key={item.value}
@@ -96,10 +87,10 @@ export function RulesContent() {
                     transition={{ duration: 0.2, delay: 0.15 + index * 0.05 }}
                   >
                     <AccordionItem value={item.value} className='border-none'>
-                      <AccordionTrigger className='group rounded-lg bg-background/40 px-3 py-3 text-base font-semibold backdrop-blur-sm transition-all hover:bg-orange-500/10 hover:no-underline sm:px-4 sm:py-4 sm:text-lg'>
+                      <AccordionTrigger className='group rounded-lg bg-background/40 px-4 py-4 text-base font-semibold backdrop-blur-sm transition-all hover:bg-orange-500/10 hover:no-underline sm:text-lg'>
                         {item.title}
                       </AccordionTrigger>
-                      <AccordionContent className='px-3 pb-3 pt-2 text-sm text-muted-foreground sm:px-4 sm:pb-4 sm:text-base'>
+                      <AccordionContent className='px-4 pb-4 pt-2 text-sm text-muted-foreground sm:text-base'>
                         <ul className='list-disc space-y-2 pl-4 sm:space-y-3 sm:pl-6'>
                           {item.content.map((text, i) => (
                             <li key={i}>{text}</li>
@@ -110,31 +101,37 @@ export function RulesContent() {
                   </motion.div>
                 ))}
               </Accordion>
-            </CardContent>
+            </div>
           </Card>
         </motion.div>
+      </div>
+    </div>
+  );
+}
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-        >
-          <Card className='relative overflow-hidden border-none bg-background/40 shadow-none backdrop-blur-xl supports-[backdrop-filter]:bg-background/40'>
-            <CardBackground />
-            <CardHeader className='relative pb-4'>
-              <CardTitle className='bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-xl text-transparent sm:text-2xl'>
-                Need Help?
-              </CardTitle>
-            </CardHeader>
-            <CardContent className='relative'>
-              <p className='text-base text-muted-foreground sm:text-lg'>
-                If you have questions about the rules or need to report a
-                violation, contact our staff through Discord or in-game
-                commands.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
+export function RulesSkeleton() {
+  return (
+    <div className='container mx-auto min-h-[calc(100vh-4rem)] px-4 py-8 sm:py-12 lg:py-16'>
+      <div className='mx-auto max-w-4xl space-y-4 sm:space-y-6'>
+        <div className='h-10 w-48 animate-pulse rounded-lg bg-muted sm:h-12' />
+        <div className='h-6 w-full max-w-sm animate-pulse rounded-lg bg-muted' />
+        <Separator className='my-4' />
+      </div>
+
+      <div className='mx-auto mt-8 max-w-4xl space-y-6 sm:mt-12 sm:space-y-8'>
+        <Card className='relative overflow-hidden border-none bg-background/40 shadow-none backdrop-blur supports-[backdrop-filter]:bg-background/40'>
+          <CardBackground />
+          <div className='relative space-y-4 p-6 sm:p-8'>
+            {[1, 2, 3, 4, 5].map(index => (
+              <div
+                key={index}
+                className='space-y-2 rounded-lg bg-background/40 p-4 backdrop-blur-sm'
+              >
+                <div className='h-7 w-32 animate-pulse rounded-lg bg-muted sm:h-8' />
+              </div>
+            ))}
+          </div>
+        </Card>
       </div>
     </div>
   );
