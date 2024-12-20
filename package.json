@@ -1,6 +1,6 @@
 {
   "name": "rustroam-site",
-  "version": "0.1.7-beta.1",
+  "version": "0.1.7",
   "private": true,
   "scripts": {
     "dev": "next lint --fix && next dev --turbopack",
