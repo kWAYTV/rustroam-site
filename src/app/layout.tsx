@@ -25,11 +25,11 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <div className='relative flex min-h-screen flex-col overflow-hidden bg-gradient-to-b from-background via-background/95 to-background text-foreground'>
-            <Background />
+          <div className='relative flex min-h-screen flex-col'>
+            <Background className='fixed inset-0' />
             <Navbar />
-            <main className='relative flex-1'>{children}</main>
-            <Footer className='relative' />
+            <main className='relative z-10 flex-1'>{children}</main>
+            <Footer className='relative z-10' />
           </div>
         </Providers>
       </body>
