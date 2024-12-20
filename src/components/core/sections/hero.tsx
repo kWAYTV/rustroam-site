@@ -79,7 +79,7 @@ export function Hero() {
                 asChild
                 className='group relative w-full overflow-hidden bg-gradient-to-r from-orange-500 to-red-500 text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_theme(colors.orange.500)] sm:w-auto'
               >
-                <Link href='/servers'>View Our Servers</Link>
+                <Link href='/servers'>Our Servers</Link>
               </Button>
 
               <Button
