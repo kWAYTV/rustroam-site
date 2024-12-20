@@ -1,7 +1,6 @@
 'use client';
 
 import { ServerIcon } from 'lucide-react';
-import { motion } from 'motion/react';
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
