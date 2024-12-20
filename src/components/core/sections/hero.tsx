@@ -2,12 +2,12 @@
 
 import { ServerIcon } from 'lucide-react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 
 import { CardBackground } from '@/components/core/layout/card-background';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import Link from 'next/link';
 
 export function Hero() {
   return (
