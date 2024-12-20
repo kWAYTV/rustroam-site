@@ -6,7 +6,7 @@ export default function NotFoundPage() {
     <div className='relative min-h-screen'>
       <Background />
       <NotFound title='404 - Page Not Found'>
-        Sorry, we couldn't find the page you're looking for.
+        Sorry, we couldn&apos;t find the page you&apos;re looking for.
       </NotFound>
     </div>
   );
