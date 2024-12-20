@@ -63,7 +63,7 @@ export function Hero() {
                 className='mx-auto max-w-2xl text-base text-muted-foreground/90 sm:text-lg md:text-xl lg:text-2xl'
               >
                 Experience the ultimate Rust gaming environment with
-                high-performance servers, active community, and friendly staff.
+                high-performance servers, active community, and regular events.
               </motion.p>
             </div>
 
