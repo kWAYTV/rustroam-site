@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { Background } from '@/components/core/layout/background';
 import { Footer } from '@/components/core/layout/footer';
 import { Navbar } from '@/components/core/layout/navbar';
 import { Providers } from '@/components/providers/providers';
@@ -24,9 +25,8 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <div className='relative flex min-h-screen flex-col bg-gradient-to-b from-background to-background text-foreground'>
-            <div className='pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]' />
-            <div className='pointer-events-none absolute inset-0 bg-background [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,transparent_0%,#000000_100%)]' />
+          <div className='relative flex min-h-screen flex-col overflow-hidden bg-gradient-to-b from-background via-background/95 to-background text-foreground'>
+            <Background />
             <Navbar />
             <main className='relative flex-1'>{children}</main>
             <Footer className='relative' />
