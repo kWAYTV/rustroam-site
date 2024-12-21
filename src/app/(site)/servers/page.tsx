@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Browse our Rust gaming servers.'
 };
 
+export const revalidate = 3600; // invalidate every hour
+
 export default function ServersPage() {
   return (
     <Suspense fallback={<ServersSkeleton />}>
