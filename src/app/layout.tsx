@@ -3,8 +3,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { Background } from '@/components/core/layout/background';
 import { BackToTop } from '@/components/core/layout/back-to-top';
+import { Background } from '@/components/core/layout/background';
 import { Footer } from '@/components/core/layout/footer';
 import { Navbar } from '@/components/core/layout/navbar';
 import { Providers } from '@/components/providers/providers';
