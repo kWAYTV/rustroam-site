@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import Script from 'next/script';
 
 import { CardBackground } from '@/components/core/layout/card-background';
 import { Card } from '@/components/ui/card';
@@ -14,26 +15,22 @@ const servers = [
   }
 ];
 
-// Add the BattleMetrics resize script to the page
-const BATTLEMETRICS_SCRIPT = `
-  window.addEventListener('message', function(e) {
-    if (e.data.uid && e.data.type === 'sizeUpdate') {
-      var i = document.querySelector('iframe[name="'+e.data.uid+'"]');
-      if (i) {
-        i.style.width = e.data.payload.width;
-        i.style.height = e.data.payload.height;
-      }
-    }
-  });
-`;
-
 export function ServersContent() {
   return (
     <>
-      <script
-        type='application/javascript'
-        dangerouslySetInnerHTML={{ __html: BATTLEMETRICS_SCRIPT }}
-      />
+      <Script id='battlemetrics-resize' strategy='afterInteractive'>
+        {`
+          window.addEventListener('message', function(e) {
+            if (e.data.uid && e.data.type === 'sizeUpdate') {
+              var i = document.querySelector('iframe[name="'+e.data.uid+'"]');
+              if (i) {
+                i.style.width = e.data.payload.width;
+                i.style.height = e.data.payload.height;
+              }
+            }
+          });
+        `}
+      </Script>
       <div className='container mx-auto min-h-[calc(100vh-4rem)] px-4 py-8 sm:py-12 lg:py-16'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
