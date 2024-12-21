@@ -1,10 +1,13 @@
 'use client';
 
 import { ServerIcon } from 'lucide-react';
+import { motion, useScroll } from 'motion/react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 import { MobileMenu } from '@/components/core/layout/mobile-menu';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -12,8 +15,31 @@ const navItems = [
 ];
 
 export function Navbar() {
+  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    return scrollY.on('change', latest => {
+      setIsScrolled(latest > 0);
+    });
+  }, [scrollY]);
+
   return (
-    <nav className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+    <motion.nav
+      className={cn(
+        'sticky top-0 z-50 w-full border-b backdrop-blur',
+        isScrolled
+          ? 'border-border/40 bg-background/80'
+          : 'border-transparent bg-transparent'
+      )}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      style={{
+        backdropFilter: isScrolled ? 'blur(16px)' : 'blur(0px)',
+        transition:
+          'backdrop-filter 0.2s, background-color 0.2s, border-color 0.2s'
+      }}
+    >
       <div className='container mx-auto px-4'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
@@ -51,6 +77,6 @@ export function Navbar() {
           <MobileMenu items={navItems} />
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
