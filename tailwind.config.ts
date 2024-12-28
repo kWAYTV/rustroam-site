@@ -73,34 +73,23 @@ export default {
             height: '0'
           }
         },
-        'gradient-xy': {
-          '0%, 100%': {
-            'background-position': '0% 50%'
-          },
-          '50%': {
-            'background-position': '100% 50%'
-          }
-        },
         float: {
           '0%, 100%': {
             transform: 'translateY(0px)'
           },
           '50%': {
-            transform: 'translateY(-20px)'
+            transform: 'translateY(-10px)'
           }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'gradient-xy': 'gradient-xy 15s ease infinite',
-        float: 'float 6s ease-in-out infinite'
+        float: 'float 4s ease-in-out infinite'
       },
       backgroundImage: {
         'gradient-radial-to-b':
           'radial-gradient(ellipse 80% 50% at 50% -20%, transparent 0%, #000000 100%)',
-        'gradient-radial-to-tr':
-          'radial-gradient(ellipse 70% 50% at 50% 0%, transparent 0%, #000000 100%)',
         'grid-small':
           'linear-gradient(to right, #80808008 1px, transparent 1px), linear-gradient(to bottom, #80808008 1px, transparent 1px)',
         'grid-large':

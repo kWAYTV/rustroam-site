@@ -15,40 +15,27 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.4 }}
       >
-        <Card className='relative overflow-hidden border-none bg-background/40 p-6 shadow-none backdrop-blur-xl supports-[backdrop-filter]:bg-background/40 md:p-12 lg:p-16'>
+        <Card className='relative overflow-hidden border-none bg-background/40 p-6 shadow-none backdrop-blur-sm supports-[backdrop-filter]:bg-background/40 md:p-12 lg:p-16'>
           <CardBackground />
           <div className='relative flex flex-col items-center space-y-8 text-center md:space-y-12'>
             <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+              transition={{ duration: 0.3 }}
               className='animate-float'
             >
-              <div className='rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 p-4 backdrop-blur-sm'>
+              <div className='rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 p-4'>
                 <ServerIcon className='h-16 w-16 text-orange-500 dark:text-orange-400 md:h-20 md:w-20' />
               </div>
             </motion.div>
 
             <div className='space-y-4 md:space-y-6'>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
-                <Badge
-                  variant='secondary'
-                  className='bg-gradient-to-r from-orange-500/20 to-red-500/20 text-orange-500 backdrop-blur-sm'
-                >
-                  Now in Beta
-                </Badge>
-              </motion.div>
-
               <motion.h1
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.3 }}
                 className='text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl'
               >
                 Welcome to{' '}
@@ -58,9 +45,9 @@ export function Hero() {
               </motion.h1>
 
               <motion.p
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{ duration: 0.3 }}
                 className='mx-auto max-w-2xl text-base text-muted-foreground/90 sm:text-lg md:text-xl lg:text-2xl'
               >
                 Experience the ultimate Rust gaming environment with
@@ -69,9 +56,9 @@ export function Hero() {
             </div>
 
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.3 }}
               className='flex w-full flex-col gap-4 sm:w-auto sm:flex-row'
             >
               <Button

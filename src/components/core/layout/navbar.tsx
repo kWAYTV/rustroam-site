@@ -27,17 +27,16 @@ export function Navbar() {
   return (
     <motion.nav
       className={cn(
-        'sticky top-0 z-50 w-full border-b backdrop-blur',
+        'sticky top-0 z-50 w-full border-b',
         isScrolled
-          ? 'border-border/40 bg-background/80'
+          ? 'border-border/40 bg-background/60'
           : 'border-transparent bg-transparent'
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      transition={{ duration: 0.2 }}
       style={{
-        backdropFilter: isScrolled ? 'blur(16px)' : 'blur(0px)',
-        transition:
-          'backdrop-filter 0.2s, background-color 0.2s, border-color 0.2s'
+        backdropFilter: isScrolled ? 'blur(8px)' : 'none'
       }}
     >
       <div className='container mx-auto px-4'>

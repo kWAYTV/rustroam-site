@@ -3,14 +3,14 @@
 export function CardBackground() {
   return (
     <>
-      {/* Animated gradient overlay */}
-      <div className='absolute inset-0 animate-gradient-xy bg-gradient-to-r from-orange-500/10 via-red-500/10 to-orange-500/10' />
+      {/* Simplified gradient overlay with reduced animation complexity */}
+      <div className='absolute inset-0 bg-gradient-to-r from-orange-500/5 via-red-500/5 to-orange-500/5' />
 
-      {/* Enhanced grid pattern */}
-      <div className='pointer-events-none absolute inset-0 bg-grid-small' />
+      {/* Simplified grid with reduced opacity */}
+      <div className='pointer-events-none absolute inset-0 bg-grid-small opacity-30' />
 
-      {/* Radial mask */}
-      <div className='pointer-events-none absolute inset-0 bg-background/20 [mask-image:var(--tw-gradient-radial-to-tr)]' />
+      {/* Simplified radial mask */}
+      <div className='pointer-events-none absolute inset-0 bg-background/10' />
     </>
   );
 }
