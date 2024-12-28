@@ -32,6 +32,19 @@ export function Hero() {
             </motion.div>
 
             <div className='space-y-4 md:space-y-6'>
+              <motion.div
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Badge
+                  variant='secondary'
+                  className='bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-500'
+                >
+                  Now in Beta
+                </Badge>
+              </motion.div>
+
               <motion.h1
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
